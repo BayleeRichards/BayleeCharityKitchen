@@ -1,0 +1,398 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC156CAB-097D-4152-9098-D54235D3C2FD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CharityKitchenApp</RootNamespace>
+    <AssemblyName>CharityKitchenApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sodium, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\libsodium-net.0.10.0\lib\Net40\Sodium.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetAllMealsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetOneMealResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.Meal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetIngredientsForMealResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.MealIngredient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetAllIngredientsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetOneIngredientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.Ingredient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.InsertNewIngredientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.UpdateExistingIngredientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.InsertNewMealResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.UpdateExistingMealResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetMealsToDisplayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.MealDisplay.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetAllOrdersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetOneOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.InsertNewOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.Order.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.UpdateExistingOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetMealsForOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetOrdersToDisplayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.OrderDisplay.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.OrderMeal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetAllRolesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetAllUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetOneRoleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetOneUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.InsertNewRoleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.InsertNewUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.Role.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.UpdateExistingRoleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.UpdateExistingUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetRolesForDisplayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetRolesForUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.UserRole1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetOneUserByUsernameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.ValidateCredentialsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.UserLogin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.ValidateLoginCredentialsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetLoggedInUserByUsernameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.GetIngredientsForOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.OrderIngredient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.IsAlphabeticalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenApp.CharityKitchenDataServiceProxy.IsNumericResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenDataService.disco" />
+    <None Include="Connected Services\CharityKitchenDataServiceProxy\configuration91.svcinfo" />
+    <None Include="Connected Services\CharityKitchenDataServiceProxy\configuration.svcinfo" />
+    <None Include="Connected Services\CharityKitchenDataServiceProxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Global.asax" />
+    <Content Include="images\Meal_Images\empty_plate.jpg" />
+    <Content Include="images\Meal_Images\turkey_sandwich.jpg" />
+    <Content Include="Login.aspx" />
+    <Content Include="Site.Master" />
+    <None Include="Connected Services\CharityKitchenDataServiceProxy\CharityKitchenDataService.wsdl" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <Content Include="User_Pages\Order_View.aspx" />
+    <Content Include="User_Pages\Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="User_Pages\Credentials_Edit.aspx" />
+    <Content Include="User_Pages\Ingredient_Edit.aspx" />
+    <Content Include="User_Pages\Kitchen.aspx" />
+    <Content Include="User_Pages\Meal_Edit.aspx" />
+    <Content Include="User_Pages\Orders.aspx" />
+    <Content Include="User_Pages\Order_Edit.aspx" />
+    <Content Include="User_Pages\User_Default.aspx" />
+    <Content Include="User_Pages\User_Edit.aspx" />
+    <Content Include="User_Pages\User_Management.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\CharityKitchenDataServiceProxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\Credentials_Edit.aspx.cs">
+      <DependentUpon>Credentials_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\Credentials_Edit.aspx.designer.cs">
+      <DependentUpon>Credentials_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\Ingredient_Edit.aspx.cs">
+      <DependentUpon>Ingredient_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\Ingredient_Edit.aspx.designer.cs">
+      <DependentUpon>Ingredient_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\Kitchen.aspx.cs">
+      <DependentUpon>Kitchen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\Kitchen.aspx.designer.cs">
+      <DependentUpon>Kitchen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\Meal_Edit.aspx.cs">
+      <DependentUpon>Meal_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\Meal_Edit.aspx.designer.cs">
+      <DependentUpon>Meal_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\Order_Edit.aspx.cs">
+      <DependentUpon>Order_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\Order_Edit.aspx.designer.cs">
+      <DependentUpon>Order_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\Order_View.aspx.cs">
+      <DependentUpon>Order_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\Order_View.aspx.designer.cs">
+      <DependentUpon>Order_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\User_Default.aspx.cs">
+      <DependentUpon>User_Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\User_Default.aspx.designer.cs">
+      <DependentUpon>User_Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\User_Edit.aspx.cs">
+      <DependentUpon>User_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\User_Edit.aspx.designer.cs">
+      <DependentUpon>User_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Pages\User_Management.aspx.cs">
+      <DependentUpon>User_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Pages\User_Management.aspx.designer.cs">
+      <DependentUpon>User_Management.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CharityKitchenDataServiceProxy\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50861</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50861/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.3.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.3.0\build\net40\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.3.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.3.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

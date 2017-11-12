@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CharityKitchenApp.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Charity Kitchen</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .top-2px
+        {
+            top: 2px;
+        }
+        .navbar
+        {
+            border-radius: 0px;
+        }
+        .header-color
+        {
+            color: #f4511e;
+        }
+        hr
+        {
+            border-color: #aaa;
+        }
+        .btn-help
+        {
+            border-radius: 20px;
+            padding: 0px;
+            line-height: 1;
+            border: none;
+            font-size: 28px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Charity Kitchen <span class="glyphicon glyphicon-fire top-2px"></span></a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <%if (Context.User.Identity.IsAuthenticated)
+                        { %>
+                            <li><a href="User_Default.aspx">Home</a></li>
+                        <% } %>
+                        <%else
+                        { %>
+                            <li><a href="Default.aspx">Home</a></li>
+                        <% } %>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" style="margin-right:0%;">
+                        <%if (Context.User.Identity.IsAuthenticated)
+                        { %>
+                                <li><asp:LinkButton ID="btnOrders" runat="server" OnClick="btnOrders_Click" Visible="false"><span class="glyphicon glyphicon-list-alt top-2px"></span> Orders</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="btnKitchen" runat="server" OnClick="btnKitchen_Click" Visible="false"><span class="glyphicon glyphicon-ice-lolly top-2px"></span> Kitchen</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="btnUserManagement" runat="server" OnClick="btnUserManagement_Click" Visible="false"><span class="glyphicon glyphicon-user top-2px"></span> User Management</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="btnCredentials" runat="server" OnClick="btnCredentials_Click"><span class="glyphicon glyphicon-pencil top-2px"></span> Edit Credentials</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click"><span class="glyphicon glyphicon-log-out top-2px"></span> Logout</asp:LinkButton></li>
+                        <% } %>
+                        <%else
+                        { %>
+                                <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in top-2px"></span> Login</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </nav>
+            <asp:ScriptManager runat="server" />
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharityKitchenDataService", "CharityKitchenDataService\CharityKitchenDataService.csproj", "{354B5C44-8C59-446B-BA9E-059BE21F8CF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharityKitchenApp", "CharityKitchenApp\CharityKitchenApp.csproj", "{AC156CAB-097D-4152-9098-D54235D3C2FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{354B5C44-8C59-446B-BA9E-059BE21F8CF7} = {354B5C44-8C59-446B-BA9E-059BE21F8CF7}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{354B5C44-8C59-446B-BA9E-059BE21F8CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{354B5C44-8C59-446B-BA9E-059BE21F8CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{354B5C44-8C59-446B-BA9E-059BE21F8CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{354B5C44-8C59-446B-BA9E-059BE21F8CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC156CAB-097D-4152-9098-D54235D3C2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC156CAB-097D-4152-9098-D54235D3C2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC156CAB-097D-4152-9098-D54235D3C2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC156CAB-097D-4152-9098-D54235D3C2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
